@@ -1,4 +1,8 @@
-@extends('layouts.main')
+@extends('layouts.layout')
+
+@section('php')
+    active
+@endsection
 
 
 @section('main')
@@ -89,19 +93,22 @@
                                                 <div class="mb-3">
                                                     {{--                                                <label for="exampleFormControlInput1" class="form-label">Новый вопрос</label>--}}
                                                     <input name="question" type="text" class="form-control"
-                                                           id="exampleFormControlInput1" placeholder="Вопрос..." required>
+                                                           id="exampleFormControlInput1" placeholder="Вопрос..."
+                                                           required>
                                                 </div>
                                                 @error('question')
                                                 <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
                                                 <div class="mb-3">
                                                     {{--                                                <label for="exampleFormControlTextarea1" class="form-label">Примечание</label>--}}
-                                                    <textarea name="note" class="form-control" id="exampleFormControlTextarea1"
+                                                    <textarea name="note" class="form-control"
+                                                              id="exampleFormControlTextarea1"
                                                               rows="3" placeholder="Примечание..."></textarea>
                                                 </div>
                                                 <div class="mb-3">
                                                     {{--                                                <label for="exampleFormControlTextarea2" class="form-label">Пример кода</label>--}}
-                                                    <textarea name="code" class="form-control" id="exampleFormControlTextarea2"
+                                                    <textarea name="code" class="form-control"
+                                                              id="exampleFormControlTextarea2"
                                                               rows="3" placeholder="Примеры кода..."></textarea>
                                                 </div>
                                                 <button type="button" class="btn btn-outline-primary">Создать</button>
