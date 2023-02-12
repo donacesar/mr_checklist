@@ -70,7 +70,7 @@
                 <div class="card-header">
                     <div class="d-flex justify-content-between ms-3">
                         <div class="d-flex">
-                            <div class="">1</div>
+                            <div class="">{{ $sql->rank }}</div>
                             <div class="ms-3">{{ $sql->question }}</div>
                         </div>
 
@@ -78,8 +78,8 @@
 
                             <a href="{{ route('sqls.up', $sql->id) }}" class="nav-link"><i class="fa-solid fa-circle-chevron-up ms-2"></i></a>
                             <a href="{{ route('sqls.down', $sql->id) }}" class="nav-link"><i class="fa-solid fa-circle-chevron-down ms-2"></i></a>
-                            <a href="{{ route('sqls.edit', $sql->id) }}" class="nav-link"><i class="fa-solid fa-pen-to-square ms-2 "></i></a>
-                            <a href="#" class="nav-link"><i class="fa-solid fa-trash ms-2 me-2"></i></a>
+                            <a href="{{ route('sqls.edit', $sql->id) }}" class="nav-link"><i class="fa-solid fa-pen-to-square ms-2"></i></a>
+                            <a href="{{ route('sqls.delete', $sql->id) }}" data-method="delete" class="nav-link"><i class="fa-solid fa-trash ms-2 me-2"></i></a>
                         </div>
                     </div>
 
