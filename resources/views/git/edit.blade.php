@@ -1,7 +1,6 @@
-@extends('layouts.edit.layout', ['type' => 'sql'])
+@extends('layouts.edit.layout', ['type' => 'git'])
 
 {{--Определяет активную ссылку в меню--}}
-@section('sql')
+@section('git')
     active
 @endsection
-
