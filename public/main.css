@@ -1,5 +1,5 @@
 body {
     background-color: white;
+    padding: 0 calc(30px - (100vw - 100%)) 0 0;
 }
-
 

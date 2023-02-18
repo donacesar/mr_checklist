@@ -11,61 +11,46 @@ class SqlController extends Controller
 
     public function index()
     {
-
-        $sqls = Sql::all()->sortBy('rank');
-        return view('sql.index', compact('sqls'));
-    }
-
-
-    public function create()
-    {
-
-        return redirect()->route('sqls.index');
+        $items = Sql::all()->sortBy('rank');
+        return view('sql.index', compact('items'));
     }
 
     public function store(Request $request)
     {
         $data = $request->all();
-        $php = Sql::create($data);
-        $data = ['rank' => $php->id];
-        $php = Sql::find($php->id);
-        $php->update($data);
-        return redirect()->route('sqls.index');
+        $sql = Sql::create($data);
+        $data = ['rank' => $sql->id];
+        $sql = Sql::find($sql->id);
+        $sql->update($data);
+        return redirect()->route('sql.index');
     }
-
-
-    public function show($id)
-    {
-        return redirect()->route('sqls.index');
-    }
-
 
     public function edit(Sql $sql)
     {
-        return view('sql.edit', compact('sql'));
+        $item = $sql;
+        return view('sql.edit', compact('item'));
     }
-
 
     public function update(Request $request, Sql $sql)
     {
         $data = $request->all();
         $sql_item = Sql::find($sql->id);
         $sql_item->update($data);
-        return redirect()->route('sqls.index');
+        return redirect()->route('sql.index');
     }
 
 
-    public function destroy(Sql $sql)
+    public function delete(Sql $sql)
     {
         $sql->delete();
-        return redirect()->route('sqls.index');
+        return redirect()->route('sql.index');
     }
 
     public function up(Sql $sql)
     {
         $first_sql = Sql::all()->sortBy('rank')->first();
 
-        if ($sql->rank === $first_sql->rank) return redirect()->route('sqls.index');
+        if ($sql->rank === $first_sql->rank) return redirect()->route('sql.index');
 
         $rank_all = [];
         $all_sql = Sql::all()->sortBy('rank');
@@ -82,7 +67,7 @@ class SqlController extends Controller
             $pre_sql->update(['rank' => $rank]);
         });
 
-        return redirect()->route('sqls.index');
+        return redirect()->route('sql.index');
 
     }
 
@@ -90,7 +75,7 @@ class SqlController extends Controller
     {
         $last_sql = Sql::all()->sortByDesc('rank')->first();
 
-        if ($sql->rank === $last_sql->rank) return redirect()->route('sqls.index');
+        if ($sql->rank === $last_sql->rank) return redirect()->route('sql.index');
 
         $rank_all = [];
         $all_sql = Sql::all()->sortBy('rank');
@@ -107,6 +92,6 @@ class SqlController extends Controller
             $post_sql->update(['rank' => $rank]);
         });
 
-        return redirect()->route('sqls.index');
+        return redirect()->route('sql.index');
     }
 }
