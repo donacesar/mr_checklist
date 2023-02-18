@@ -43,18 +43,6 @@ Route::controller(\App\Http\Controllers\SqlController::class)->group(function ()
     }
 
 
-//    Route::controller($class_name)->group(function () use ($type) {
-//
-//        Route::get($type, 'index')->name('php.index');
-//        Route::post($type, 'store')->name("$type.store");
-//        Route::get("$type/{$type}/edit", 'edit')->name("$type.edit");
-//        Route::patch("$type/{$type}", 'update')->name("$type.update");
-//        Route::get("$type/{$type}/delete", 'delete')->name("$type.delete");
-//
-//        Route::get("$type/{$type}/up", 'up')->name("$type.up");
-//        Route::get("$type/{$type}/down", 'down')->name("$type.down");
-//    });
-
 
 
 
