@@ -36,7 +36,7 @@
                                         <div class="border p-3 bg-light">{{ $item->note }}
                                         </div>
                                         <div class="border p-3">
-                                            <code>{{ $item->code }}</code>
+                                            <pre><code>{{ $item->code }}</code></pre>
                                         </div>
                                     </main>
                                 </div>

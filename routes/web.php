@@ -3,26 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 
-//Route::get('/', function () {
-//    return redirect(\route('sql.index'));
-//});
 
-Route::controller(\App\Http\Controllers\SqlController::class)->group(function () {
-
-    Route::get('sql', 'index')->name('sql.index');
-    Route::post('sql', 'store')->name('sql.store');
-    Route::get('sql/{sql}/edit', 'edit')->name('sql.edit');
-    Route::patch('sql/{sql}', 'update')->name('sql.update');
-    Route::get('sql/{sql}/delete', 'delete')->name('sql.delete');
-
-    Route::get('sql/{sql}/up', 'up')->name('sql.up');
-    Route::get('sql/{sql}/down', 'down')->name('sql.down');
+Route::get('/', function () {
+    return redirect(\route('sql.index'));
 });
 
-
-
-
-    $types = ['git'];
+    $types = ['sql', 'git'];
 
 
     foreach ($types as $type) {
@@ -38,7 +24,6 @@ Route::controller(\App\Http\Controllers\SqlController::class)->group(function ()
 
         Route::get($type . '/{' . $type . '}/up', [$class_name, 'up'])->name("$type.up");
         Route::get($type . '/{' . $type . '}/down', [$class_name, 'down'])->name("$type.down");
-
 
     }
 
