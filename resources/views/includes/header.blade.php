@@ -2,25 +2,35 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-lg">
             <a class="navbar-brand" href="#">{{ config('app.name') }}</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link @yield('sql')" aria-current="page" href="{{ route('sql.index') }}">SQL</a>
+                        <a class="nav-link {{ active_link('sql.index' , 'text-primary strong') }}" aria-current="page"
+                           href="{{ route('sql.index') }}">SQL</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  @yield('git')" href="{{ route('git.index') }}">Git</a>
+                        <a class="nav-link  {{ active_link('git.index', 'text-primary strong') }}"
+                           href="{{ route('git.index') }}">Git</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle @yield('php')" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle {{ active_link(['phpString.index', 'phpArray.index'], 'text-primary strong') }}"
+                           href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
                             PHP
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Работа с массивами</a></li>
-                            <li><a class="dropdown-item" href="#">Работа со строками</a></li>
-                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item {{ active_link('phpArray.index', 'dropdown_active') }}"
+                                   href="{{ route('phpArray.index') }}">Работа с массивами</a></li>
+                            <li><a class="dropdown-item {{ active_link('phpString.index', 'dropdown_active' )}}"
+                                   href="{{ route('phpString.index') }}">Работа со строками</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>

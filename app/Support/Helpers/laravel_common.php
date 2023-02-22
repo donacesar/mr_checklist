@@ -1,16 +1,31 @@
 <?php
 // -------------------------Функции Хелперы для Laravel-----------------
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Route;
+
 if (!function_exists('transaction')) {
     function transaction(Closure $callback, int $attempts = 1): mixed
     {
 
-        if (\Illuminate\Support\Facades\DB::transactionLevel() > 0) {
+        if (DB::transactionLevel() > 0) {
             return $callback();
         }
 
 
 
-        return  \Illuminate\Support\Facades\DB::transaction($callback, $attempts);
+        return  DB::transaction($callback, $attempts);
+    }
+}
+
+if (!function_exists('active_link')) {
+    function active_link(string|array $names, string $class = 'active'): string|null
+    {
+
+        if (is_string($names)) {
+            $names = [$names];
+        }
+
+        return Route::is($names) ? $class : null ;
     }
 }

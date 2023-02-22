@@ -14,7 +14,7 @@ Route::get('/', function () {
     return redirect(\route('sql.index'));
 });
 
-    $types = ['sql', 'git'];
+    $types = ['sql', 'git', 'phpString', 'phpArray'];
 
 
     foreach ($types as $type) {
