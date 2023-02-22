@@ -27,7 +27,8 @@
             "Database\\Seeders\\": "database/seeders/"
         },
         "files": [
-            "App/Support/Helpers/common.php"
+            "App/Support/Helpers/common.php",
+            "App/Support/Helpers/laravel_common.php"
         ]
     },
     "autoload-dev": {

@@ -19,12 +19,15 @@ class TypeController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->all();
-        $item = $this->class_name::create($data);
-        $data = ['rank' => $item->id];
-        $item = $this->class_name::find($item->id);
-        $item->update($data);
+        transaction(function () use ($request){
+            $data = $request->all();
+            $item = $this->class_name::create($data);
+            $data = ['rank' => $item->id];
+            $item = $this->class_name::find($item->id);
+            $item->update($data);
+        });
         return redirect()->route(static::TYPE . '.index');
+
     }
 
     public function edit($item)
@@ -67,7 +70,7 @@ class TypeController extends Controller
 
         $pre = $this->class_name::where('rank', $pre_rank)->first();
         $rank = $item->rank;
-        DB::transaction(function () use ($item, $pre, $rank) {
+        transaction(function () use ($item, $pre, $rank) {
             $item->update(['rank' => $pre->rank]);
             $pre->update(['rank' => $rank]);
         });
@@ -93,7 +96,7 @@ class TypeController extends Controller
 
         $post = $this->class_name::where('rank', $post_rank)->first();
         $rank = $item->rank;
-        DB::transaction(function () use ($item, $post, $rank) {
+        transaction(function () use ($item, $post, $rank) {
             $item->update(['rank' => $post->rank]);
             $post->update(['rank' => $rank]);
         });

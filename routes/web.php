@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/transaction', function () {
+    return transaction(function(){return 1;});
+});
+Route::get('/test', function() {
+    return view('test');
+});
 
 
 Route::get('/', function () {

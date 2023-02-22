@@ -1,7 +1,11 @@
 <?php
 // -------------------------Функции Хелперы-----------------
 
-function Foo(): string
-{
 
+if (!function_exists('foo')) {
+    function Foo(): string
+    {
+        return 'Bar';
+    }
 }
+
