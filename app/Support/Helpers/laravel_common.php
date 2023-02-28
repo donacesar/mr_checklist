@@ -29,3 +29,12 @@ if (!function_exists('active_link')) {
         return Route::is($names) ? $class : null ;
     }
 }
+
+if (!function_exists('flash')) {
+    function flash(string $message, string $type = 'success'): void
+    {
+        session()->flash('flash.message', $message);
+        session()->flash('flash.type', $type);
+
+    }
+}

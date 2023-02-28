@@ -22,9 +22,7 @@
 
 @include('includes.header')
 
-@include('includes.form_new')
-
-@include('includes.main')
+@yield ('content')
 
 @include('includes.footer')
 

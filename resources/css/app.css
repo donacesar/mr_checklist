@@ -1,0 +1,23 @@
+body {
+    background-color: white;
+    padding: 0 calc(30px - (100vw - 100%)) 0 0;
+}
+
+.strong {
+    text-shadow: #0d6efd 1px 0px 0px;
+    border: 1px solid black;
+    border-radius: 42%;
+}
+
+.dropdown_active {
+    background-color: #5786c6;
+    color: white;
+}
+
+@media (max-width: 991px) {
+    .strong {
+        text-shadow: #0d6efd 1px 0px 0px;
+        border: none;
+
+    }
+}

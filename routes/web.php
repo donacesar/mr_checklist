@@ -7,6 +7,10 @@ Route::get('/transaction', function () {
 });
 Route::get('/test', function() {
     return view('test');
+})->name('test');
+Route::get('/send', function() {
+    flash('опаньки');
+    return redirect()->route('test');
 });
 
 

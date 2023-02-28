@@ -1,3 +1,1 @@
-<?php
-
-    @dd(PHP_SAPI)
+@include('includes.flash')
