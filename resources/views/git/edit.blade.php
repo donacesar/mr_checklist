@@ -1,2 +1,2 @@
-@extends('layouts.edit.layout', ['type' => 'git'])
+@extends('layouts.edit.layout', ['route_name' => 'git'])
 

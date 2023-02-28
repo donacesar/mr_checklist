@@ -1,5 +1,5 @@
 
-@extends('layouts.layout', ['type' => 'phpString'])
+@extends('layouts.layout', ['route_name' => 'phpString'])
 
 
 

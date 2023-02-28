@@ -16,9 +16,9 @@ Route::get('/send', function() {
 
 Route::get('/', function () {
     return redirect(\route('sql.index'));
-});
+})->name('home');
 
-    $types = ['sql', 'git', 'phpString', 'phpArray'];
+    $types = ['sql', 'git', 'phpString', 'phpArray', 'regexp', 'docker', 'laravel', 'linux'];
 
 
     foreach ($types as $type) {

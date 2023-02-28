@@ -17,13 +17,13 @@
                             </div>
                             <div class="col-2 p-3">
                                 <div class="d-flex me-3 justify-content-center">
-                                    <a href="{{ route($type . ".up", $item->id) }}" class="nav-link pe-2"><i
+                                    <a href="{{ route($route_name . ".up", $item->id) }}" class="nav-link pe-2"><i
                                             class="fa-solid fa-circle-chevron-up ms-2"></i></a>
-                                    <a href="{{ route($type . ".down", $item->id) }}" class="nav-link pe-2"><i
+                                    <a href="{{ route($route_name . ".down", $item->id) }}" class="nav-link pe-2"><i
                                             class="fa-solid fa-circle-chevron-down ms-2"></i></a>
-                                    <a href="{{ route($type . ".edit", $item->id) }}" class="nav-link pe-2"><i
+                                    <a href="{{ route($route_name . ".edit", $item->id) }}" class="nav-link pe-2"><i
                                             class="fa-solid fa-pen-to-square ms-2"></i></a>
-                                    <a href="{{ route($type . ".delete", $item->id) }}" data-method="delete"
+                                    <a href="{{ route($route_name . ".delete", $item->id) }}" data-method="delete"
                                        class="nav-link"><i class="fa-solid fa-trash ms-2 me-2"></i></a>
                                 </div>
                             </div>

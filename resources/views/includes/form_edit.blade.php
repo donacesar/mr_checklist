@@ -1,7 +1,7 @@
 <div class="container my-4 d-flex flex-column р-20">
     <div class="card">
         <div class="card px-5 py-4">
-            <form action="{{ route($type . '.update', $item->id) }}" method="post">
+            <form action="{{ route($route_name . '.update', $item->id) }}" method="post">
                 @csrf
                 @method('patch')
                 <div class="mb-3">

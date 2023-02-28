@@ -16,7 +16,7 @@
                             <div class="container my-4">
                                 <main class="flex-shrink-0">
                                     <div class="card px-5 py-4">
-                                        <form action="{{route($type . '.store')}}" method="post">
+                                        <form action="{{route($route_name . '.store')}}" method="post">
                                             @csrf
                                             <div class="mb-3">
                                                 <input name="question" type="text" class="form-control"

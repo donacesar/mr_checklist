@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('phps', function (Blueprint $table) {
+        Schema::create('linuxes', function (Blueprint $table) {
             $table->id();
             $table->text('question');
             $table->text('note')->nullable();
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('phps');
+        Schema::dropIfExists('linuxes');
     }
 };

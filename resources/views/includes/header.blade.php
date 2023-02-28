@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-lg">
-            <a class="navbar-brand" href="#">{{ config('app.name') }}</a>
+            <a class="navbar-brand" href="{{ route('home') }}">{{ config('app.name') }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -35,16 +35,16 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @yield('regexp')" href="#">RegExp</a>
+                        <a class="nav-link {{ active_link('regexp.index', 'text-primary strong') }}" href="{{ route('regexp.index') }}">RegExp</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @yield('docker')" href="#">Docker</a>
+                        <a class="nav-link {{ active_link('docker.index', 'text-primary strong') }}" href="{{ route('docker.index') }}">Docker</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @yield('laravel')" href="#">Laravel</a>
+                        <a class="nav-link {{ active_link('laravel.index', 'text-primary strong') }}" href="{{ route('laravel.index') }}">Laravel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @yield('linux')" href="#">Linux</a>
+                        <a class="nav-link {{ active_link('linux.index', 'text-primary strong') }}" href="{{ route('linux.index') }}">Linux</a>
                     </li>
                 </ul>
                 <form class="d-flex">

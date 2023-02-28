@@ -1,5 +1,5 @@
 
-@extends('layouts.layout', ['type' => 'phpArray'])
+@extends('layouts.layout', ['route_name' => 'phpArray'])
 
 
 

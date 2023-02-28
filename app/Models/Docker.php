@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Php extends Model
+class Docker extends Model
 {
     use HasFactory;
 
-    protected $table = 'phps';
+    protected $table = 'dockers';
     protected $guarded = [];
 }

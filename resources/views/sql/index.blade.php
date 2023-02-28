@@ -1,4 +1,4 @@
-@extends('layouts.layout', ['type' => 'sql'])
+@extends('layouts.layout', ['route_name' => 'sql'])
 
 
 
