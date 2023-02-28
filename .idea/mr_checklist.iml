@@ -122,5 +122,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="atom-one-dark" level="application" />
+    <orderEntry type="library" name="highlight" level="application" />
   </component>
 </module>
