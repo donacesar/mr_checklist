@@ -14,11 +14,12 @@
     <script>hljs.highlightAll();</script>
 
 
-    <link rel="stylesheet" href="icons.css">
+    <link rel="stylesheet" href="{{asset('icons.css')}}">
 
     <title>{{ config('app.name') }}</title>
 </head>
 <body class="d-flex flex-column h-100">
+<div class="container w-75 .bg-secondary">
 
 @include('includes.header')
 
@@ -28,6 +29,6 @@
 
 @include('includes.footer')
 
-
+</div>
 </body>
 </html>

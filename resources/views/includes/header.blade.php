@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-bottom">
         <div class="container-lg">
             <a class="navbar-brand" href="{{ route('home') }}">{{ config('app.name') }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -35,22 +35,43 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ active_link('regexp.index', 'text-primary strong') }}" href="{{ route('regexp.index') }}">RegExp</a>
+                        <a class="nav-link {{ active_link('regexp.index', 'text-primary strong') }}"
+                           href="{{ route('regexp.index') }}">RegExp</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ active_link('docker.index', 'text-primary strong') }}" href="{{ route('docker.index') }}">Docker</a>
+                        <a class="nav-link {{ active_link('docker.index', 'text-primary strong') }}"
+                           href="{{ route('docker.index') }}">Docker</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ active_link('laravel.index', 'text-primary strong') }}" href="{{ route('laravel.index') }}">Laravel</a>
+                        <a class="nav-link {{ active_link('laravel.index', 'text-primary strong') }}"
+                           href="{{ route('laravel.index') }}">Laravel</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ active_link('linux.index', 'text-primary strong') }}" href="{{ route('linux.index') }}">Linux</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {{ active_link(['linux.index', 'apache.index', 'nginx.index'], 'text-primary strong') }}"
+                           href="#" id="navbarDropdown2" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Linux
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <li><a class="dropdown-item {{ active_link('linux.index', 'dropdown_active') }}"
+                                   href="{{ route('linux.index') }}">Linux</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item {{ active_link('apache.index', 'dropdown_active' )}}"
+                                   href="{{ route('apache.index') }}">Apache</a></li>
+
+                            <li><a class="dropdown-item {{ active_link('nginx.index', 'dropdown_active' )}}"
+                                   href="{{ route('nginx.index') }}">Nginx</a></li>
+                        </ul>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Поиск..." aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Поиск</button>
-                </form>
+                @guest()
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Поиск..." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Поиск</button>
+                    </form>
+                @endguest
             </div>
         </div>
     </nav>

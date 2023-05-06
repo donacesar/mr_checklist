@@ -1,4 +1,4 @@
-<footer class="footer mt-auto text-center text-lg-start bg-light text-muted">
+<footer class="footer mt-auto text-center text-lg-start bg-dark text-muted rounded-top">
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
         © {{date('Y')}} Copyright:

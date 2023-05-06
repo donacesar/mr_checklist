@@ -14,7 +14,7 @@
     <script>hljs.highlightAll();</script>
 
 
-    <link rel="stylesheet" href="icons.css">
+    <link rel="stylesheet" href="{{asset('icons.css')}}">
 
     <title>{{ config('app.name') }}</title>
 </head>
@@ -24,7 +24,11 @@
 
 @yield ('content')
 
+@yield('map')
+
 @include('includes.footer')
+
+
 
 
 </body>

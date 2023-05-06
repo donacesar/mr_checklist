@@ -15,29 +15,36 @@
                                     </button>
                                 </h2>
                             </div>
-                            <div class="col-2 p-3">
-                                <div class="d-flex me-3 justify-content-center">
-                                    <a href="{{ route($route_name . ".up", $item->id) }}" class="nav-link pe-2"><i
-                                            class="fa-solid fa-circle-chevron-up ms-2"></i></a>
-                                    <a href="{{ route($route_name . ".down", $item->id) }}" class="nav-link pe-2"><i
-                                            class="fa-solid fa-circle-chevron-down ms-2"></i></a>
-                                    <a href="{{ route($route_name . ".edit", $item->id) }}" class="nav-link pe-2"><i
-                                            class="fa-solid fa-pen-to-square ms-2"></i></a>
-                                    <a href="{{ route($route_name . ".delete", $item->id) }}" data-method="delete"
-                                       class="nav-link"><i class="fa-solid fa-trash ms-2 me-2"></i></a>
+                            @auth()
+                                <div class="col-2 p-3">
+                                    <div class="d-flex me-3 justify-content-center">
+                                        <a href="{{ route($route_name . ".up", $item->id) }}" class="nav-link pe-2"><i
+                                                class="fa-solid fa-circle-chevron-up ms-2"></i></a>
+                                        <a href="{{ route($route_name . ".down", $item->id) }}" class="nav-link pe-2"><i
+                                                class="fa-solid fa-circle-chevron-down ms-2"></i></a>
+                                        <a href="{{ route($route_name . ".edit", $item->id) }}" class="nav-link pe-2"><i
+                                                class="fa-solid fa-pen-to-square ms-2"></i></a>
+                                        <a href="{{ route($route_name . ".delete", $item->id) }}" data-method="delete"
+                                           class="nav-link"><i class="fa-solid fa-trash ms-2 me-2"></i></a>
+                                    </div>
                                 </div>
-                            </div>
+                            @endauth
                         </div>
                         <div id="flush-collapse-{{ $item->id }}" class="accordion-collapse collapse"
                              aria-labelledby="flush-heading1" data-bs-parent="#accordionFlush{{ $item->id }}">
                             <div class="accordion-body">
-                                <div class="container my-4">
+                                <div class="container my-1">
                                     <main class="flex-shrink-0">
-                                        <div class="border p-3 bg-light">{{ $item->note }}
-                                        </div>
-                                        <div class="border p-3">
-                                            <pre><code>{{ $item->code }}</code></pre>
-                                        </div>
+                                        @if($item->note != null)
+                                            <div class="border p-1 bg-light">
+                                                <pre>{{ $item->note }}</pre>
+                                            </div>
+                                        @endif
+                                        @if($item->code != null)
+                                            <div class="border p-1">
+                                                <pre><code class="corner-round">{{ $item->code }}</code></pre>
+                                            </div>
+                                        @endif
                                     </main>
                                 </div>
                             </div>
