@@ -66,12 +66,25 @@
                         </ul>
                     </li>
                 </ul>
+
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Поиск..." aria-label="Search">
+                    <button class="btn btn-outline-success me-2 " type="submit">Поиск</button>
+                </form>
                 @guest()
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Поиск..." aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Поиск</button>
-                    </form>
+                    <div class="">
+                        <a href="{{ route('login') }}"
+                           class="link-primary">Войти</a>
+                    </div>
                 @endguest
+                @auth()
+                    <div class="">
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button type="submit" class="link-primary">Выйти</button>
+                        </form>
+                    </div>
+                @endauth
             </div>
         </div>
     </nav>

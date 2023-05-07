@@ -1,22 +1,3 @@
-body {
-    background-color: lightgray;
-
-}
-
-.strong {
-    text-shadow: #0d6efd 1px 0 0;
-    border: 1px solid black;
-    border-radius: 42%;
-}
-
-.corner-round {
-    border-radius: 5px;
-}
-
-@media (max-width: 991px) {
-    .strong {
-        text-shadow: #0d6efd 1px 0 0;
-        border: none;
-
-    }
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

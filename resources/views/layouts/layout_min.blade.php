@@ -19,17 +19,18 @@
     <title>{{ config('app.name') }}</title>
 </head>
 <body class="d-flex flex-column h-100">
+<div class="container w-75 .bg-secondary">
 
-@include('includes.header')
+    @include('includes.header')
 
-@yield ('content')
-
-@yield('map')
-
-@include('includes.footer')
+    @yield ('content')
 
 
 
+    @include('includes.footer')
+
+
+</div>
 
 </body>
 </html>
