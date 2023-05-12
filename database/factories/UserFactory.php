@@ -22,7 +22,7 @@ class UserFactory extends Factory
             'name' => '',
             'email' => 'donacesar@gmail.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('Donacesar1'), // password
+            'password' => '$2y$10$MV1afPNR6RwDNzCr1Og6LuJtYFOJcFFLGCweaoLK/EZJVBbNuqKJS', // password
             'remember_token' => Str::random(10),
         ];
     }
