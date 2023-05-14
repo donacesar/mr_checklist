@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 
 class TypeController extends Controller
 {
-    public const ROUTE_NAME = '';
-    public string $model_name = '';
+    public const ROUTE_NAME = '';   // перегружается в дочернем классе
+    public string $model_name = ''; // перегружается в дочернем классе
 
     public function index()
     {
-        $items = $this->model_name::orderBy('rank')->paginate(5);
+        $items = $this->model_name::orderBy('rank')->paginate(5);;
         return view(static::ROUTE_NAME . '.index', compact('items'));
     }
 
@@ -24,23 +24,24 @@ class TypeController extends Controller
             $item = $this->model_name::find($item->id);
             $item->update($data);
         });
-        return redirect()->route(static::ROUTE_NAME . '.index');
+        return redirect(url()->previous());
 
     }
 
     public function edit($item)
     {
+        $back_url = url()->previous();
         $item = $this->model_name::find($item);
-        return view(static::ROUTE_NAME . '.edit', compact('item'));
+        return view(static::ROUTE_NAME . '.edit', compact('item', 'back_url'));
     }
 
     public function update(Request $request, $item)
     {
-
         $data = $request->all();
+        unset($data['back_url']);
         $item = $this->model_name::find($item);
         $item->update($data);
-        return redirect()->route(static::ROUTE_NAME . '.index');
+        return redirect($request->back_url);
     }
 
 
@@ -48,7 +49,7 @@ class TypeController extends Controller
     {
         $item = $this->model_name::find($item);
         $item->delete();
-        return redirect()->route(static::ROUTE_NAME . '.index');
+        return redirect(url()->previous());
     }
 
     public function up($item)
@@ -56,7 +57,7 @@ class TypeController extends Controller
         $item = $this->model_name::find($item);
         $first = $this->model_name::all()->sortBy('rank')->first();
 
-        if ($item->rank === $first->rank) return redirect()->route(static::ROUTE_NAME . '.index');
+        if ($item->rank === $first->rank) return redirect(url()->previous());
 
         $rank_all = [];
         $all = $this->model_name::all()->sortBy('rank');
@@ -73,8 +74,7 @@ class TypeController extends Controller
             $pre->update(['rank' => $rank]);
         });
 
-        return redirect()->route(static::ROUTE_NAME . '.index');
-
+        return redirect(url()->previous());
     }
 
     public function down($item)
@@ -82,7 +82,7 @@ class TypeController extends Controller
         $item = $this->model_name::find($item);
         $last = $this->model_name::all()->sortByDesc('rank')->first();
 
-        if ($item->rank === $last->rank) return redirect()->route(static::ROUTE_NAME . '.index');
+        if ($item->rank === $last->rank) return redirect(url()->previous());
 
         $rank_all = [];
         $all = $this->model_name::all()->sortBy('rank');
@@ -99,6 +99,6 @@ class TypeController extends Controller
             $post->update(['rank' => $rank]);
         });
 
-        return redirect()->route(static::ROUTE_NAME . '.index');
+        return redirect(url()->previous());
     }
 }

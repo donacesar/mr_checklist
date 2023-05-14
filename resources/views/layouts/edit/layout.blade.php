@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <link rel="stylesheet" href="icons.css">
+    <link rel="stylesheet" href="{{ asset('/icons.css') }}">
 
     <title>{{ config('app.name') }}</title>
 </head>

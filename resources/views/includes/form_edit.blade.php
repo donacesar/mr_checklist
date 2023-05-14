@@ -5,6 +5,7 @@
                 @csrf
                 @method('patch')
                 <div class="mb-3">
+                    <label for="exampleFormControlInput1">Вопрос</label>
                     <input name="question" type="text" class="form-control"
                            id="exampleFormControlInput1" placeholder="Вопрос..."
                            required value="{{ $item->question }}">
@@ -13,16 +14,19 @@
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <div class="mb-3">
-                        <textarea name="note" class="form-control"
-                                  id="exampleFormControlTextarea1"
-                                  rows="3" placeholder="Примечание...">{{ $item->note }}</textarea>
+                    <label for="exampleFormControlTextarea1">Примечание</label>
+                    <textarea name="note" class="form-control"
+                              id="exampleFormControlTextarea1"
+                              rows="3" placeholder="Примечание...">{{ $item->note }}</textarea>
                 </div>
                 <div class="mb-3">
-                        <textarea name="code" class="form-control"
-                                  id="exampleFormControlTextarea2"
-                                  rows="3" placeholder="Примеры кода...">{{ $item->code }}</textarea>
+                    <label for="exampleFormControlTextarea2">Примеры кода</label>
+                    <textarea name="code" class="form-control"
+                              id="exampleFormControlTextarea2"
+                              rows="3" placeholder="Примеры кода...">{{ $item->code }}</textarea>
                 </div>
                 <button type="submit" class="btn btn-outline-primary">Обновить</button>
+                <input type="hidden" name="back_url" value="{{ $back_url }}">
             </form>
         </div>
     </div>
