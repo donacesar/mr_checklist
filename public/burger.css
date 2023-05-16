@@ -1,0 +1,57 @@
+.burger {
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+
+    width: 20px;
+    height: 20px;
+}
+
+.burger:hover {
+    cursor: pointer;
+}
+
+.burger:focus {
+    outline: none;
+}
+
+.burger-line {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+.burger-line:nth-child(1) {
+    top: 3px;
+    transform: translateY(-7px);
+
+}
+
+.burger-line:nth-child(3) {
+    bottom: 3px;
+    transform: translateY(7px);
+}
+
+.burger.open .burger-line:nth-child(1) {
+    transform: rotate(225deg);
+}
+
+.burger.open .burger-line:nth-child(3) {
+    transform: rotate(-225deg);
+}
+
+.burger.open .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+@media (max-width: 991px) {
+    .burger{
+        display: flex;
+    }
+}

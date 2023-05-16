@@ -15,15 +15,15 @@
                 @enderror
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1">Примечание</label>
-                    <textarea name="note" class="form-control"
+                    <textarea  rows="{{ substr_count($item->note, PHP_EOL) + 1 }}"  name="note" class="form-control"
                               id="exampleFormControlTextarea1"
-                              rows="3" placeholder="Примечание...">{{ $item->note }}</textarea>
+                              placeholder="Примечание...">{{ $item->note }}</textarea>
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea2">Примеры кода</label>
                     <textarea name="code" class="form-control"
                               id="exampleFormControlTextarea2"
-                              rows="3" placeholder="Примеры кода...">{{ $item->code }}</textarea>
+                              rows="{{ substr_count($item->code, PHP_EOL) + 1 }}" placeholder="Примеры кода...">{{ $item->code }}</textarea>
                 </div>
                 <button type="submit" class="btn btn-outline-primary">Обновить</button>
                 <input type="hidden" name="back_url" value="{{ $back_url }}">

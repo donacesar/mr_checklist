@@ -8,7 +8,7 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapse-form" aria-expanded="false"
                                     aria-controls="flush-collapse-form">
-                                <h5 class="text-primary">Новый вопрос</h5>
+                                <span class="text-primary">Новый вопрос</span>
                             </button>
                         </h2>
                         <div id="flush-collapse-form" class="accordion-collapse collapse"
