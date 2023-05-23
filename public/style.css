@@ -254,7 +254,7 @@ ul {
     .all-menu {
         position: absolute;
         top: 42px;
-        left: 0px;
+        left: 0;
         flex-direction: column;
         justify-content: center;
         align-items: start;
@@ -279,15 +279,17 @@ ul {
     .menu {
         flex-direction: column;
         align-items: start;
-        font-size: 20px;
+        font-size: 22px;
+        margin-left: 20px;
     }
 
     .menu-item {
-        padding: 5px 0;
+        padding: 10px 0;
     }
 
     .login {
         margin-top: 10px;
+        margin-left: 20px;
     }
 
     .burger {
