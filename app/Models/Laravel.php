@@ -9,6 +9,6 @@ class Laravel extends Model
 {
     use HasFactory;
 
-    protected $table = 'regexps';
+    protected $table = 'laravels';
     protected $guarded = [];
 }

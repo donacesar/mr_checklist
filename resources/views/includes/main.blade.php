@@ -1,10 +1,4 @@
 @foreach($items as $item)
-
-
-
-
-
-
     <div class="container-sm my-4 d-flex flex-column р-20">
         <div class="card">
             <div class="card-header edit_card">
