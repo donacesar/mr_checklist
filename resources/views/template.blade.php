@@ -185,9 +185,9 @@
                 {{--                </div>--}}
             </div>
         @endforeach
-        {{--        <div class="mb-3">--}}
-        {{--            {{ $items->links() }}--}}
-        {{--        </div>--}}
+                <div class=""">
+                    {{ $items->links() }}
+                </div>
 
     </main>
 
