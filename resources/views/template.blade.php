@@ -8,6 +8,8 @@
     <title>{{ config('app.name') }}</title>
     <link rel="stylesheet" href="{{ asset('/style.css') }}">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet"
           href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -29,13 +31,56 @@
             </button>
             <div class="all-menu" id="all-menu">
                 <div class="menu">
-                    <a href="{{ route('sql.index') }}" class="menu-item">SQL</a>
-                    <a href="{{ route('git.index') }}" class="menu-item">Git</a>
-                    <a href="" class="menu-item">PHP</a>
-                    <a href="{{ route('regexp.index') }}" class="menu-item">RegExp</a>
-                    <a href="{{ route('docker.index') }}" class="menu-item">Docker</a>
-                    <a href="{{ route('laravel.index') }}" class="menu-item">Laravel</a>
-                    <a href="" class="menu-item">Linux</a>
+                    <div>
+                        <a href="{{ route('sql.index') }}"
+                           class="menu-item {{ active_link('sql.index' , 'active-link') }}">SQL</a>
+                    </div>
+
+                    <div>
+                        <a href="{{ route('git.index') }}"
+                           class="menu-item {{ active_link('git.index' , 'active-link') }}">Git</a>
+                    </div>
+
+                    <div class="drop-position">
+                        <a class="menu-item drop-menu{{ active_link(['phpString.index', 'phpArray.index'], 'active-link') }}">PHP
+                            <i class="fa fa-caret-down"></i></a>
+                        <div class="drop-item">
+                            <a class="menu-item { active_link('phpArray.index', 'active-link') }}"
+                               href="{{ route('phpArray.index') }}">Массивы (array)</a>
+                            <a class="menu-item{{ active_link('phpString.index', 'active-link' )}}"
+                               href="{{ route('phpString.index') }}">Строки (string)</a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="{{ route('regexp.index') }}"
+                           class="menu-item {{ active_link('regexp.index' , 'active-link') }}">RegExp</a>
+                    </div>
+                    <div>
+                        <a href="{{ route('docker.index') }}"
+                           class="menu-item {{ active_link('git.index' , 'active-link') }}">Docker</a>
+                    </div>
+                    <div>
+                        <a href="{{ route('laravel.index') }}"
+                           class="menu-item {{ active_link('laravel.index' , 'active-link') }}">Laravel</a>
+                    </div>
+                    <div class="drop-position">
+                        <a class="menu-item drop-menu{{ active_link(['linux.index', 'apache.index', 'nginx.index'], 'active-link') }}">Linux
+                            <i class="fa fa-caret-down"></i></a>
+                        <div class="drop-item">
+                            <a class="menu-item {{ active_link('linux.index', 'dropdown_active') }}"
+                                   href="{{ route('linux.index') }}">Linux</a>
+
+                                <hr class="drop-hr">
+
+                           <a class="menu-item {{ active_link('apache.index', 'dropdown_active' )}}"
+                                   href="{{ route('apache.index') }}">Apache</a>
+
+                            <a class="menu-item {{ active_link('nginx.index', 'dropdown_active' )}}"
+                                   href="{{ route('nginx.index') }}">Nginx</a>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="login">
                     @guest()
@@ -68,9 +113,9 @@
                     </div>
                     <div class="accordion-body">
                         @if($item->note != null)
-                        <div class="note">
-                            <pre>{{ $item->note }}</pre>
-                        </div>
+                            <div class="note">
+                                <pre>{{ $item->note }}</pre>
+                            </div>
                         @endif
                         @if($item->code != null)
                             <div class="code">
@@ -185,9 +230,9 @@
                 {{--                </div>--}}
             </div>
         @endforeach
-                <div class=""">
-                    {{ $items->links() }}
-                </div>
+        <div class="pagination">
+            {{ $items->links() }}
+        </div>
 
     </main>
 
@@ -197,6 +242,7 @@
             © {{date('Y')}} Copyright: {{ config('app.name') }}
         </div>
     </footer>
+
 </div>
 
 <script src="{{ asset('/burger-menu.js') }}"></script>
