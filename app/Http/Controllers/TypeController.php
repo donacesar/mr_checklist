@@ -11,7 +11,7 @@ class TypeController extends Controller
 
     public function index()
     {
-        $items = $this->model_name::orderBy('rank')->paginate(5);;
+        $items = $this->model_name::orderBy('rank')->paginate(8);;
         return view(static::ROUTE_NAME . '.index', compact('items'));
     }
 

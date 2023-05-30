@@ -421,9 +421,14 @@ ul {
 
     .menu {
         flex-direction: column;
+        justify-content: space-between;
         align-items: start;
         font-size: 22px;
         margin-left: 20px;
+    }
+
+    .menu-row {
+        margin: 17px 0;
     }
 
     .menu-item {
