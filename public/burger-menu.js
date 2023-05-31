@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     for (i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function () {
-            this.classList.toggle("open");
+            this.classList.toggle("open-minus");
             let panel = this.nextElementSibling;
             if (panel.style.maxHeight) {
                 panel.style.maxHeight = null;

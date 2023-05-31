@@ -31,7 +31,7 @@
                 </div>
                 @auth()
                     <div class="edit_menu_wrapper">
-                        <div class="wide_screen">
+
                             <nav class="edit_menu_wide" id="edit_menu{{$item->id}}">
 
                                 <div class="edit_menu_item"><a
@@ -54,7 +54,6 @@
 
                             </nav>
 
-                        </div>
 
 
                         <button class="edit-burger" type="button" data-bs-toggle="collapse"
