@@ -21,13 +21,20 @@
                 </div>
 
                 <div class="menu-row drop-position">
-                    <a href="#" class="menu-item drop-menu {{ active_link(['phpArray.index', 'phpString.index'], 'active-link') }}">PHP
+                    <a class="menu-item drop-menu {{ active_link(['phpArray.index', 'phpString.index'], 'active-link') }}">PHP
                         <i class="fa fa-caret-down"></i></a>
+
                     <div class="drop-item">
-                        <a class="menu-item {{ active_link('phpArray.index', 'active-link') }}"
-                           href="{{ route('phpArray.index') }}">Массивы (array)</a>
-                        <a class="menu-item {{ active_link('phpString.index', 'active-link' )}}"
-                           href="{{ route('phpString.index') }}">Строки (string)</a>
+                        <div class="drop-wrapper">
+                            <div class="menu-row">
+                                <a class="menu-item {{ active_link('phpArray.index', 'active-link') }}"
+                                   href="{{ route('phpArray.index') }}">Массивы (array)</a>
+                            </div>
+                            <div class="menu-row">
+                                <a class="menu-item {{ active_link('phpString.index', 'active-link' )}}"
+                                   href="{{ route('phpString.index') }}">Строки (string)</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -46,18 +53,21 @@
                 <div class="menu-row drop-position">
                     <a class="menu-item drop-menu {{ active_link(['linux.index', 'apache.index', 'nginx.index'], 'active-link') }}">Linux
                         <i class="fa fa-caret-down"></i></a>
-                    <div class="drop-item">
-                        <a class="menu-item {{ active_link('linux.index', 'active-link') }}"
-                           href="{{ route('linux.index') }}">Linux</a>
-
-                        <hr class="drop-hr">
-
-                        <a class="menu-item {{ active_link('apache.index', 'active-link' )}}"
-                           href="{{ route('apache.index') }}">Apache</a>
-
-                        <a class="menu-item {{ active_link('nginx.index', 'active-link' )}}"
-                           href="{{ route('nginx.index') }}">Nginx</a>
-
+                    <div class="menu-row drop-item">
+                        <div class="drop-wrapper">
+                            <div class="menu-row">
+                                <a class="menu-item {{ active_link('linux.index', 'active-link') }}"
+                                   href="{{ route('linux.index') }}">Linux</a>
+                            </div>
+                            <div class="menu-row">
+                                <a class="menu-item {{ active_link('apache.index', 'active-link' )}}"
+                                   href="{{ route('apache.index') }}">Apache</a>
+                            </div>
+                            <div class="menu-row">
+                                <a class="menu-item {{ active_link('nginx.index', 'active-link' )}}"
+                                   href="{{ route('nginx.index') }}">Nginx</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

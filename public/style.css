@@ -24,13 +24,14 @@ ul {
 }
 
 .container {
-    /*height: 100vh;*/
+    height: 100vh;
     width: 75%;
     background-color: rgba(238, 238, 238, 0.4);
     margin: 0 auto;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     padding: 0;
 }
 
@@ -142,6 +143,9 @@ ul {
     flex-grow: 1;
     margin-right: 16px;
 }
+.menu-row {
+    margin: 0;
+}
 
 .menu-item {
     padding: 0 8px;
@@ -235,6 +239,7 @@ ul {
 .main {
     width: 100%;
     padding: 50px 100px 0 100px;
+    flex-grow: 1;
 }
 
 .main-container {
@@ -293,6 +298,10 @@ ul {
     flex-direction: column;
 }
 
+.drop-wrapper {
+    background-color: rgb(33, 37, 41);
+}
+
 .drop-item {
     padding: 28px 0 0 0;
     /*background-color: rgb(33, 37, 41);*/
@@ -313,13 +322,6 @@ ul {
     background-color: rgb(33, 37, 41);
 }
 
-.drop-hr {
-    margin: 0;
-    padding: 0;
-    border: none;
-    border-top: 6px solid rgba(255, 255, 255, 0.55);
-    background-color: rgb(33, 37, 41);
-}
 
 .show {
     display: flex;
@@ -428,7 +430,7 @@ ul {
     }
 
     .menu-row {
-        margin: 17px 0;
+        margin: 3px 0;
     }
 
     .menu-item {
@@ -473,6 +475,10 @@ ul {
         width: 100%;
         padding: 10px 20px 0px 20px;
     }
+
+    .menu-row {
+        margin: 4px 0;
+    }
     .pagination li {
         font-family: 'Nunito', sans-serif;
         font-size: 16px;
@@ -515,6 +521,10 @@ ul {
     .main {
         width: 100%;
         padding: 5px 10px;
+    }
+
+    .menu-row {
+        margin: 17px 0;
     }
 
     .pagination li {
