@@ -25,9 +25,6 @@ ul {
     src: url(/fonts/Nunito-Regular.ttf);
 }
 
-.border {
-    border: 1px lolid blue;
-}
 
 .container {
     height: 100vh;
@@ -449,8 +446,7 @@ ul {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     width: 400%;
-    border-radius: 0px 0px 6px 6px;
-    /*z-index: -5;*/
+    border-radius: 0 0 6px 6px;
 }
 
 
@@ -626,7 +622,7 @@ ul {
 
     .main {
         width: 100%;
-        padding: 10px 20px 0px 20px;
+        padding: 10px 20px 0 20px;
     }
 
     .menu-row {
