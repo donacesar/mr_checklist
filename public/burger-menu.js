@@ -50,14 +50,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    // Бургеры для меню EDIT
+   // Бургеры для меню EDIT
 
-// let burgers = document.querySelectorAll('.burger');
-    // burgers.forEach(function (item) {
-    //     item.addEventListener('click', function () {
-    //         item.classList.toggle('open')
-    //     })
-    // });
-
+let burgers = document.querySelectorAll('.edit-burger');
+    burgers.forEach(function (item) {
+        item.addEventListener('click', function () {
+            item.classList.toggle('edit-open');
+            console.log( item.nextElementSibling);
+            item.nextElementSibling.classList.toggle('edit-open');
+        });
+    });
 
 });

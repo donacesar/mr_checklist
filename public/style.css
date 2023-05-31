@@ -23,6 +23,10 @@ ul {
     src: url(/fonts/Nunito-Regular.ttf);
 }
 
+.border {
+    border: 1px lolid blue;
+}
+
 .container {
     height: 100vh;
     width: 75%;
@@ -143,6 +147,7 @@ ul {
     flex-grow: 1;
     margin-right: 16px;
 }
+
 .menu-row {
     margin: 0;
 }
@@ -223,6 +228,22 @@ ul {
     line-height: 0.8;
 }
 
+.btn {
+    display: inline-block;
+    padding: 6px 9px;
+    background-color: #444;
+    color: #00fdf5;
+
+    border: 1px solid rgba(0, 0, 0, 0.55);
+    border-radius: 5px;
+    user-select: none;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 0.8;
+}
+
 .login button:hover {
     border: 1px solid rgba(255, 255, 255, 0.85);
     color: rgba(255, 255, 255, 0.85);
@@ -249,12 +270,25 @@ ul {
 }
 
 .accordion {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     border: 1px solid black;
     border-radius: 3px;
+    position: relative;
+}
+
+.base {
+    /*flex-direction: row-reverse;*/
 }
 
 .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #eee;
     color: #444;
     cursor: pointer;
@@ -262,7 +296,10 @@ ul {
     width: 100%;
     outline: none;
     font-size: 15px;
+    position: relative;
     transition: 0.4s;
+}
+.accordion-header .label {
 }
 
 .accordion-header:after {
@@ -283,6 +320,10 @@ ul {
 }
 
 .accordion-body {
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+    width: 100%;
     padding: 0 18px;
     background-color: white;
     max-height: 0;
@@ -290,9 +331,87 @@ ul {
     transition: max-height 0.2s ease-out;
 }
 
+
+.new-form {
+    margin: 30px 0;
+    width: 100%;
+    /*resize: vertical;*/
+    /*overflow: auto;*/
+    /*min-width: 150px;*/
+    /*min-height: 350px;*/
+}
+
+.new-form-color {
+    background-color: #444;
+    color: #eee;
+}
+
+.new-form form {
+
+}
+
+/*@media (prefers-reduced-motion: reduce) {*/
+/*    .form-control {*/
+/*        transition: none;*/
+/*    }*/
+/*}*/
+
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+    resize: none;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.2;
+
+
+    background-color: #444;
+    color: #eee;
+
+
+    /*color: #212529;*/
+    /*background-color: #fff;*/
+
+
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 6px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.form-control::-webkit-date-and-time-value {
+    height: 1.5em;
+}
+
+.form-control::-moz-placeholder {
+    color: #98ACABFF;
+    opacity: 1;
+}
+
+.form-control::placeholder {
+    color: #98ACABFF;
+    opacity: 1;
+}
+
+
 .drop-position {
     position: relative;
 }
+
 .drop-position:hover .drop-item {
     display: flex;
     flex-direction: column;
@@ -329,7 +448,7 @@ ul {
     /*min-height: 150px;*/
 }
 
-.drop-menu>a:hover .drop-item {
+.drop-menu > a:hover .drop-item {
     display: flex;
     flex-direction: column;
 }
@@ -358,6 +477,7 @@ ul {
     border: none;
     color: transparent;
 }
+
 .pagination .active {
     color: white;
     background-color: #0D6EFD;
@@ -394,6 +514,18 @@ ul {
     font-weight: 400;
     line-height: 20px;
 }
+
+/* Стили для edit menu */
+
+.col-3 {
+    flex: 0 0 auto;
+    width: 25%;
+}
+
+.p-3 {
+    padding: 1rem !important;
+}
+
 
 @media (max-width: 991px) {
 
@@ -461,7 +593,7 @@ ul {
         border-radius: 0;
         position: relative;
         top: 0;
-        z-index:2;
+        z-index: 2;
     }
 }
 
@@ -479,6 +611,7 @@ ul {
     .menu-row {
         margin: 4px 0;
     }
+
     .pagination li {
         font-family: 'Nunito', sans-serif;
         font-size: 16px;
@@ -487,6 +620,7 @@ ul {
         margin: 5px 7px;
         padding: 3px 8px;
     }
+
     .drop-item {
         position: relative;
         top: 0;
@@ -535,6 +669,7 @@ ul {
         margin: 5px 5px;
         padding: 2px 7px;
     }
+
     .drop-item {
         position: relative;
         top: 0;

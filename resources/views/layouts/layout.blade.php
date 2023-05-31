@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ config('app.name') }}</title>
     <link rel="stylesheet" href="{{ asset('/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/edit_menu.css') }}">
+    <link rel="stylesheet" href="{{ asset('/icons.css') }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -21,8 +23,6 @@
 <div class="container">
 
     @include('includes.header')
-
-    @include('includes.form_new')
 
     @include('includes.main')
 
