@@ -306,7 +306,6 @@ ul {
     font-size: 15px;
     position: relative;
     transition: 0.4s;
-    touch-action: none;
 }
 .accordion-header .label {
     width: 80%;
