@@ -25,6 +25,10 @@ ul {
     src: url(/fonts/Nunito-Regular.ttf);
 }
 
+.mb-3 {
+    margin-bottom: 30px;
+}
+
 
 .container {
     height: 100vh;
@@ -249,6 +253,19 @@ ul {
     line-height: 0.8;
 }
 
+.btn-edit {
+    margin: 20px 0;
+    padding: 9px 9px;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.btn-edit:hover {
+    background-color: #ff90f5;
+    color: #262626;
+    transition: 0.3s;
+}
+
 .login button:hover {
     border: 1px solid rgba(255, 255, 255, 0.85);
     color: rgba(255, 255, 255, 0.85);
@@ -353,6 +370,7 @@ ul {
 .new-form-color {
     background-color: #6d6d6d;
     color: #eee;
+    user-select: none;
 }
 
 .new-form-color:hover {
@@ -364,17 +382,10 @@ ul {
 
 }
 
-/*@media (prefers-reduced-motion: reduce) {*/
-/*    .form-control {*/
-/*        transition: none;*/
-/*    }*/
-/*}*/
-
-
 .form-control {
     display: block;
     width: 100%;
-    padding: 5px;
+    padding: 15px 10px;
     margin: 10px 0;
     resize: none;
     font-size: 1rem;
@@ -421,6 +432,21 @@ ul {
     opacity: 1;
 }
 
+.form-edit {
+    width: 100%;
+    padding: 30px;
+    margin: 20px;
+    background-color: #282828;
+    border-radius: 6px;
+}
+
+label {
+    user-select: none;
+}
+
+.form-edit label {
+    color: #c2c2c2;
+}
 
 .drop-position {
     position: relative;
@@ -513,6 +539,7 @@ ul {
     border-radius: 3px;
     padding: 3px 10px;
     color: #ff90f5;
+    user-select: none;
     z-index: 1;
 }
 
@@ -530,9 +557,9 @@ ul {
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;
+    user-select: none;
 }
 
-/* Стили для edit menu */
 
 .col-3 {
     flex: 0 0 auto;
