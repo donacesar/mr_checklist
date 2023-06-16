@@ -29,15 +29,13 @@
                         <div class="">
                             <textarea name="note" class="form-control"
                                       id="exampleFormControlTextarea1"
-                                      rows="6" placeholder="Примечание...">
-                            </textarea>
+                                      rows="6" placeholder="Примечание..."></textarea>
                         </div>
 
                         <div class="">
                             <textarea name="code" class="form-control"
                                       id="exampleFormControlTextarea2"
-                                      rows="6" placeholder="Примеры кода...">
-                            </textarea>
+                                      rows="6" placeholder="Примеры кода..."></textarea>
                         </div>
 
                         <button type="submit" class="btn">Создать</button>
