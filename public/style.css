@@ -178,24 +178,27 @@ ul {
 }
 
 .search {
+    width: 30%;
     display: flex;
-    margin-right: 4px;
+    margin-right: 27px;
 }
 
 .search-form {
-    font-family: 'Nunito', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 23px;
-    margin-inline-end: 0.3rem;
+    display: flex;
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
 }
 
 .input-form {
-    display: none;
-    width: 250px;
-    border: 0 solid transparent;
-    border-radius: 5px;
+    width: 100%;
+    height: 30px;
     padding-left: 10px;
+    border: 2px solid #7BA7AB;
+    border-radius: 5px;
+    outline: none;
+    background: #F9F0DA;
+    color: #9E9C9C;
 }
 
 .input-form:focus {
@@ -205,17 +208,28 @@ ul {
 }
 
 .search-button {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 42px;
+    height: 30px;
+    border: none;
+    background: rgba(0, 0, 0, 0.51);
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
+}
+
+.search-button:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #F9F0DA;
 }
 
 .search-button img {
     width: 18px;
 }
+
 
 .login {
     display: flex;
@@ -291,6 +305,15 @@ ul {
     margin: 10px 0;
 }
 
+.message-box {
+    color: rgba(255, 255, 255, 0.71);
+    padding: 40px;
+    margin: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.51);
+    border-radius: 6px;
+}
+
+
 .accordion {
     display: flex;
     flex-direction: column;
@@ -321,6 +344,7 @@ ul {
     position: relative;
     transition: 0.4s;
 }
+
 .accordion-header .label {
     width: 80%;
     user-select: none;
@@ -616,6 +640,12 @@ label {
     .login {
         margin-top: 10px;
         margin-left: 20px;
+    }
+
+    .search {
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-bottom: 10px;
     }
 
     .burger {
