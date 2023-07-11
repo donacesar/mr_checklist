@@ -57,6 +57,7 @@ class SearchController extends Controller
     {
         $data = file_get_contents('search.txt');
         $posts = unserialize($data);
+        if(empty($posts)) return view('search', compact('posts'));
         $posts = collect($posts)->paginate(8);
         return view('search', compact('posts'));
     }
