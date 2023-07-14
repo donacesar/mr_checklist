@@ -74,7 +74,7 @@
             <div class="search">
                 <form action="{{ route('search') }}" method="post" class="search-form">
                     @csrf
-                    <input name="search_str" placeholder="поиск" type="text" class="input-form">
+                    <input name="search_str" placeholder="Поиск" type="text" class="input-form">
                     <button class="search-button" type="submit"></button>
                 </form>
             </div>

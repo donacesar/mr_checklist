@@ -640,13 +640,14 @@ label {
 
     .login {
         margin-top: 10px;
-        margin-left: 20px;
+        margin-left: 23px;
     }
 
     .search {
         margin-top: 10px;
-        margin-left: 20px;
+        margin-left: 15px;
         margin-bottom: 10px;
+        width: 50%;
     }
 
     .burger {
