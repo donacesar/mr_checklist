@@ -41,6 +41,13 @@ class SearchController extends Controller
                         $posts[] = $item;
                     }
                 }
+                $items = $model::where('code', 'LIKE', "%{$word}%")->get();
+                if ($items->isNotEmpty()) {
+                    $items = $items->all();
+                    foreach ($items as $item) {
+                        $posts[] = $item;
+                    }
+                }
 
             }
         }
