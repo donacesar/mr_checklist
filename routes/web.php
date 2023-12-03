@@ -22,8 +22,8 @@ Route::get('/search', [\App\Http\Controllers\SearchController::class, 'index'])-
 require __DIR__.'/auth.php';
 
 
-Route::get('/test', function() {
-    return view('test');
+Route::get('/test2', function() {
+    return view('test2');
 })->name('test');
 
 
