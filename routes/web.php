@@ -22,15 +22,6 @@ Route::get('/search', [\App\Http\Controllers\SearchController::class, 'index'])-
 require __DIR__.'/auth.php';
 
 
-Route::get('/ass', function() {
-    return view('ass');
-});
-
-
-
-
-
-
 $types = ['sql', 'git', 'phpString', 'phpArray', 'regexp', 'docker', 'laravel', 'linux', 'apache', 'nginx'];
 
 
