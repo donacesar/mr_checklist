@@ -26,10 +26,6 @@ Route::get('/test', function() {
     return view('test');
 })->name('test');
 
-Route::get('/template', function() {
-    flash('опаньки');
-    return view('template');
-});
 
 
 

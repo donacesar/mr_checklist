@@ -50,7 +50,5 @@
 
             <div class="pagination">{{ $posts->links() }}</div>
         @endif
-
-
     </div>
 @endsection
