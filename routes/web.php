@@ -22,9 +22,9 @@ Route::get('/search', [\App\Http\Controllers\SearchController::class, 'index'])-
 require __DIR__.'/auth.php';
 
 
-Route::get('/test3', function() {
-    return view('test3');
-})->name('test');
+Route::get('/ass', function() {
+    return view('ass');
+});
 
 
 
